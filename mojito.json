@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "025f5019-6cb7-495f-a1d0-af0bb0dcf0bf",
+		"name": "mojito",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "view country",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "18efe230-b022-4f02-b374-123b56963777",
+						"exec": [
+							"pm.test(\"country is japan and it not in euro\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.name).to.eql(\"JAPAN\");",
+							"    pm.expect(jsonData.is_euro).to.eql(false);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3300/api/v1/country?name=JAPAN",
+					"host": [
+						"localhost"
+					],
+					"port": "3300",
+					"path": [
+						"api",
+						"v1",
+						"country"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "JAPAN"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view country AUSTRALIA",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "18efe230-b022-4f02-b374-123b56963777",
+						"exec": [
+							"pm.test(\"country is japan and it not in euro\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.name).to.eql(\"AUSTRALIA\");",
+							"    pm.expect(jsonData.is_euro).to.eql(false);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3300/api/v1/country?name=AUSTRALIA",
+					"host": [
+						"localhost"
+					],
+					"port": "3300",
+					"path": [
+						"api",
+						"v1",
+						"country"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "AUSTRALIA"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
